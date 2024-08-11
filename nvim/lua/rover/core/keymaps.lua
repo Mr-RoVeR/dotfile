@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 local kmp = vim.keymap
 kmp.set("n", "<leader>q", ":q<CR>", { silent = true, desc = "Quit" })
 kmp.set("n", "<leader>`", ":w<CR>", { silent = true, desc = "Save file" })
+kmp.set("n", "<leader>_", ":wa<CR>", { silent = true, desc = "Save all opened file" })
+
 kmp.set("v", "J", ":m '>+1<CR>gv=gv")
 kmp.set("v", "K", ":m '<-2<CR>gv=gv")
 kmp.set("n", "<C-i>", "<C-d>zz")
