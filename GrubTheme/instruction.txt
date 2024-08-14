@@ -1,0 +1,3 @@
+GRUB_THEME = "/boot/grub/themes/themes and theme.txt"
+add this to /etc/default/grub
+and then sudo grub-mkconfig -o /boot/grub/grub.cfg 

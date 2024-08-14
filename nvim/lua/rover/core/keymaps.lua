@@ -4,6 +4,13 @@ local kmp = vim.keymap
 kmp.set("n", "<leader>q", ":q<CR>", { silent = true, desc = "Quit" })
 kmp.set("n", "<leader>`", ":w<CR>", { silent = true, desc = "Save file" })
 kmp.set("n", "<leader>_", ":wa<CR>", { silent = true, desc = "Save all opened file" })
+kmp.set("n", "<leader>ls", ":LiveServerStart<CR>", { silent = true, desc = "Start live server" })
+kmp.set("n", "<leader>lS", ":LiveServerStop<CR>", { silent = true, desc = "Stop live server" })
+
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 kmp.set("v", "J", ":m '>+1<CR>gv=gv")
 kmp.set("v", "K", ":m '<-2<CR>gv=gv")
