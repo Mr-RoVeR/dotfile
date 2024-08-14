@@ -1,0 +1,46 @@
+window {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#inner-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+}
+#bar {
+  margin: 0px;
+  font-size: 16px;
+  font-family: Product Sans;
+}
+
+button,
+image {
+  background: none;
+  opacity: 0.8;
+  border-style: none;
+  box-shadow: none;
+  color: #eceff4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+button {
+  padding-top: 10px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: rgba(196, 80, 145, 0.7);
+}
+
+button:focus {
+  background-color: rgba(196, 80, 145, 0.7);
+}
+
+grid {
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 0 50px rgba(196, 80, 145, 0.7);
+}
