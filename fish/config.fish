@@ -119,6 +119,8 @@ alias cdd 'cd /run/media/rover/'
 alias cdw 'cd ~/WorkSpace'
 alias cd. 'cd ~/.config'
 alias fm 'yazi .'
+alias fzfp 'fzf --preview="bat --color=always {}"'
+
 #tmux alias
 alias tml 'tmux list-sessions'
 alias tma 'tmux attach-session -t'
