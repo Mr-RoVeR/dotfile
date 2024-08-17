@@ -33,6 +33,7 @@ elif [[ $1 == sf ]]; then
     mkdir -p ~/Pictures/Screenshots
     filename=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
     grim $filename
+    wl-copy < $filename
     notify-send 'Screenshot Taken' $filename
 
 #elif [[ $1 == si ]]; then
