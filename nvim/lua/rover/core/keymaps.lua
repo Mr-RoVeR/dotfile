@@ -20,6 +20,7 @@ kmp.set("x", "<leader>p", [["_dP]])
 kmp.set({ "n", "v" }, "<leader>y", [["+y]], { silent = true, desc = "Yank selected text" })
 kmp.set("n", "<leader>Y", [["+Y]], { silent = true, desc = "Yank cursor line" })
 kmp.set({ "n", "v" }, "<leader>d", [["_d]], { silent = true, desc = "Delete but no clip" })
+kmp.set("n", "<leader>tt", ":terminal<CR>", { silent = true, desc = "Change current window to terminal" })
 kmp.set(
 	"n",
 	"<leader>S",
