@@ -1,64 +1,55 @@
-/*
-Arc-Dark Color Scheme
-*/
-
-/* @define-color highlight #e30b9b; */
-/*@define-color highlight #f7768e;
-@define-color base1  rgba(0,0,0,0.2);
-@define-color base2 rgba(0,0,0,0.8);
-@define-color base3  rgba(0,0,0,0.1);
-*/
-*{
-    font-family: JetBrains Mono Nerd Font;
+* {
+  font-family: JetBrains Mono Nerd Font;
 }
 
 window {
-    /* border: 1px solid @highlight; */
-    border-radius: 10px;
-    /* background: rgba(0,0,0,0); */
-    color: #bb9af7;
-    position: relative;
-    background-image: linear-gradient(100deg, rgba(95, 251, 241, 0.80), rgba(134, 168, 231, 0.80), rgba(229, 63, 135, 0.80));
-    padding: 1px;
+  border-radius: 10px;
+  color: #bb9af7;
+  position: relative;
+  background-image: linear-gradient(
+    180deg,
+    rgba(95, 251, 241, 0.8),
+    rgba(134, 168, 231, 0.8),
+    rgba(229, 63, 135, 0.8)
+  );
+  padding: 1px;
 }
 
 #input {
-    margin-bottom: 15px;
-    padding:3px;
-    border-radius: 5px;
-    border:none;
-    outline:none;
-    /* color: white; */
-    color: #bb9af7;
-    /* background: @base1; */
-    background-color: rgba(0,0,0,0.8);
-}
-
-#inner-box {
-    /* background: @base3; */
+  margin-bottom: 15px;
+  padding: 3px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(8, 24, 46, 0.6),
+    rgba(86, 168, 231, 0.6),
+    rgba(229, 63, 135, 0.6)
+  );
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 1);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 #outer-box {
-    margin: 3px;
-    padding:10px;
-    background-color: rgba(0,0,0,0.9);
-    border-radius: 10px;
+  margin: 3px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
 }
 
 #text {
-    padding: 5px;
+  padding: 5px;
 }
 
-/* #entry:nth-child(even) { */
-/*     background-color: @base1; */
-/* } */
-
 #entry:selected {
-    color: black;
-    background-color: rgba(95, 251, 241, 0.60);
-    border:2px;
-    border-style:solid;
-    border-color:rgba(134, 168, 231, 0.80); 
-    border-radius:10px;
-    outline:none;
+  color: black;
+  background-color: rgba(95, 251, 241, 0.6);
+  border: 2px;
+  border-style: solid;
+  border-color: rgba(134, 168, 231, 0.8);
+  border-radius: 10px;
+  outline: none;
 }
