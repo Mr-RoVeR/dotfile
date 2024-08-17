@@ -42,7 +42,7 @@ window#waybar {
 
 tooltip {
   background-image: linear-gradient(
-    100deg,
+    130deg,
     rgba(8, 24, 46, 0.85),
     rgba(86, 168, 231, 0.6),
     rgba(229, 63, 135, 0.6)
@@ -81,7 +81,7 @@ tooltip {
 
 #workspaces button.active {
   background: linear-gradient(
-    100deg,
+    130deg,
     rgba(255, 147, 147, 0.9),
     rgba(255, 238, 153, 0.9),
     rgba(135, 206, 250, 0.9)
