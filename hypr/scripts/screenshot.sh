@@ -35,8 +35,8 @@ elif [[ $1 == sf ]]; then
     grim $filename
     notify-send 'Screenshot Taken' $filename
 
-elif [[ $1 == si ]]; then
-    grim - | swappy -f -
+#elif [[ $1 == si ]]; then
+#    grim - | swappy -f -
 
 elif [[ $1 == p ]]; then
     color=$(hyprpicker -a)
