@@ -1,4 +1,4 @@
-# init.lua
+# Dots
 
 ## Dotfiles
 | **Hyprland**                 | 
