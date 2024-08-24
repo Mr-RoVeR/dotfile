@@ -3,7 +3,7 @@
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14px;
   min-height: 10px;
 }
 
@@ -23,7 +23,7 @@ window#waybar {
 #custom-power,
 #custom-launcher,
 #workspaces {
-  /* color: rgba(250, 250, 210, 0.9); */
+  color: rgba(250, 250, 210, 0.9);
   background-image: linear-gradient(
     135deg,
     rgba(8, 24, 46, 0.85),
@@ -36,8 +36,8 @@ window#waybar {
   border-style: solid;
   border-color: rgba(8, 24, 46, 0.85);
   border-radius: 8px;
-  margin: 4px 2px;
-  padding: 4px 4px;
+  margin: 3px 2px;
+  padding: 3px 3px;
 }
 
 tooltip {
