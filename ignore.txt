@@ -1,0 +1,1 @@
+eza, hyprpaper, hyprlock, nwg-bar, nwg-drawer, powerpill, starship,wofi,wofimoji,waybar,ripgrep,neovim,dunst,gtk3,qt5ct,qt6ct,npm,ntfs-3g,qt5-graphicaleffects,qt5-quickcontrols,qt5-quickcontrols2,slurp,grimb,pavucontrol
