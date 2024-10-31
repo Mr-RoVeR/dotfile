@@ -1,34 +1,25 @@
-## Set values
-# Hide welcome message & ensure we are reporting fish as shell
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x SHELL /usr/bin/fish
 
-## Export variable need for qt-theme
 if type "qtile" >> /dev/null 2>&1
    set -x QT_QPA_PLATFORMTHEME "qt5ct"
 end
-
-# Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
 
-## Environment setup
-# Apply .profile: use this to put fish compatible .profile stuff in
 if test -f ~/.fish_profile
   source ~/.fish_profile
 end
 
-# Add ~/.local/bin to PATH
 if test -d ~/.local/bin
     if not contains -- ~/.local/bin $PATH
         set -p PATH ~/.local/bin
     end
 end
 
-# Add depot_tools to PATH
 if test -d ~/Applications/depot_tools
     if not contains -- ~/Applications/depot_tools $PATH
         set -p PATH ~/Applications/depot_tools
@@ -36,41 +27,50 @@ if test -d ~/Applications/depot_tools
 end
 
 
-## Starship prompt
 if status --is-interactive
-   source ("/usr/bin/starship" init fish --print-full-init | psub)
+   source (/usr/bin/starship init fish --print-full-init | psub)
 end
 
 
 
 ## Functions
+function __history_previous_command
+   switch (commandline -t)
+   case "!"
+      commandline -t $history[1]; commandline -f repaint
+   case "*"
+      commandline -i !
+   end
+end
 
 function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
+   switch (commandline -t)
+   case "!"
+      commandline -t ""
+      commandline -f history-token-search-backward
+   case "*"
+      commandline -i '$'
+   end
 end
 
 if [ "$fish_key_bindings" = fish_vi_key_bindings ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
+   bind -Minsert ! __history_previous_command
+   bind -Minsert '$' __history_previous_command_arguments
 else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
+   bind ! __history_previous_command
+   bind '$' __history_previous_command_arguments
 end
 
 # Fish command history
+
 function history
-    builtin history --show-time='%F %T '
+   builtin history --show-time='%F %T '
 end
 
 function backup --argument filename
-    cp $filename $filename.bak
+   cp $filename $filename.bak
 end
+
 
 # Copy DIR1 DIR2
 function copy
@@ -92,22 +92,21 @@ function cleanup
 end
 
 ## Useful functions 
+
+#Takes snapshot
 function snappit
     set description (read -P "Enter snapshot description: ")
     sudo snapper -c root create -d "$description"
 end
 
+# manual live-server from terminal
 function livs
-    # Prompt the user to enter the IPv4 address
     set description (read -P "Enter IPv4 address: ")
-    
-    # Ensure the address is not empty
     if test -z "$description"
         echo "IPv4 address cannot be empty."
         return 1
     end
 
-    # Start live-server with the provided IPv4 address and default port and browser
     live-server --host=$description --port=5500 --browser="vivaldi-snapshot"
 end
 
@@ -131,6 +130,7 @@ alias tmn 'tmux new-session -s'
 alias Gis 'git status'
 alias Gia 'git add .'
 alias Gic 'git commit -m'
+alias Gid 'git diff'
 
 alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
 alias la 'eza -a --color=always --group-directories-first --icons'  # all files and dirs
