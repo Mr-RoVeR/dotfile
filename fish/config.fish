@@ -3,34 +3,14 @@ set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x SHELL /usr/bin/fish
 
-if type "qtile" >> /dev/null 2>&1
-   set -x QT_QPA_PLATFORMTHEME "qt5ct"
-end
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-
-if test -f ~/.fish_profile
-  source ~/.fish_profile
-end
-
-if test -d ~/.local/bin
-    if not contains -- ~/.local/bin $PATH
-        set -p PATH ~/.local/bin
-    end
-end
-
-if test -d ~/Applications/depot_tools
-    if not contains -- ~/Applications/depot_tools $PATH
-        set -p PATH ~/Applications/depot_tools
-    end
-end
 
 
 if status --is-interactive
    source (/usr/bin/starship init fish --print-full-init | psub)
 end
-
 
 
 ## Functions
@@ -71,18 +51,7 @@ function backup --argument filename
    cp $filename $filename.bak
 end
 
-
-# Copy DIR1 DIR2
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | string trim --right --chars=/)
-	set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
-end
+## Useful functions 
 
 # Cleanup local orphaned packages
 function cleanup
@@ -90,8 +59,6 @@ function cleanup
         sudo pacman -R (pacman -Qdtq)
     end
 end
-
-## Useful functions 
 
 #Takes snapshot
 function snappit
@@ -113,7 +80,7 @@ end
 # custom alias
 alias v 'nvim'
 alias vv 'v .'
-alias fff 'fastfetch'
+alias ff 'fastfetch'
 alias cdd 'cd /run/media/rover/'
 alias cdw 'cd ~/WorkSpace'
 alias cd. 'cd ~/.config'
@@ -125,6 +92,10 @@ alias tml 'tmux list-sessions'
 alias tma 'tmux attach-session -t'
 alias tmk 'tmux kill-session -t'
 alias tmn 'tmux new-session -s'
+
+#custom yt-dlp alias
+alias yt-vid 'yt-dlp -f "bv*+ba/b" -S "res,ext:mp4:m4a" --merge-output-format mkv -o "%(title)s.%(ext)s"'
+alias yt-play 'yt-dlp -f "bv*+ba/b" -S "res,ext:mp4:m4a" --merge-output-format mkv -o "%(playlist_title)s/%(playlist_index)s - %(title)s.%(ext)s"'
 
 #git alias 
 alias Gis 'git status'
@@ -145,15 +116,8 @@ alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
-alias big 'expac -H M "%m\t%n" | sort -h | nl'     # Sort installed packages according to size in MB (expac must be installed)
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
-alias gitpkg 'pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
 alias grep 'ugrep --color=auto'
-alias hw 'hwinfo --short'                          # Hardware Info
-alias ip 'ip -color'
-alias psmem 'ps auxf | sort -nr -k 4'
-alias psmem10 'ps auxf | sort -nr -k 4 | head -10'
-alias rmpkg 'sudo pacman -Rdd'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
 
