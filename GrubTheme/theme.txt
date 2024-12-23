@@ -17,7 +17,7 @@ terminal-border: "0"
     height = 35
     left = 0%
     width = 100%
-    text = "Welcome to Arch"
+    text = "Welcome"
     align = "center"
     font = "DejaVu Sans Regular 48"
     color = "#ffffff"
@@ -26,7 +26,7 @@ terminal-border: "0"
 + boot_menu {
     left = 15%
     #width = 250
-    width = 70%
+    width = 75%
     #top = 50%-125
     #height = 400
     top = 30%
@@ -60,7 +60,7 @@ terminal-border: "0"
 + progress_bar {
     id = "__timeout__"
     left = 50%-125
-    top = 70%
+    top = 75%
     width = 250
     height = 20
     show_text = true
