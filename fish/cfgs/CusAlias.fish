@@ -4,13 +4,17 @@ alias vv 'v .'
 alias ff 'fastfetch'
 alias fm 'yazi .'
 alias fzfp 'fzf --preview="bat --color=always {}"'
-alias pac 'sudo pacman'
 alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
 alias grep 'ugrep --color=auto'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
 alias DIE 'systemctl poweroff'
 alias RBT 'systemctl reboot'
+
+#arch pacman alias
+alias pac 'sudo pacman'
+alias pacup 'sudo pacman -Syu'
+alias pacrm 'sudo pacman -Rns'
 #tmux alias
 alias tml 'tmux list-sessions'
 alias tma 'tmux attach-session -t'
