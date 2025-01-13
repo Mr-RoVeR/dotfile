@@ -15,6 +15,7 @@ alias RBT 'systemctl reboot'
 alias pac 'sudo pacman'
 alias pacup 'sudo pacman -Syu'
 alias pacrm 'sudo pacman -Rns'
+alias pacin 'sudo pacman -S'
 #tmux alias
 alias tml 'tmux list-sessions'
 alias tma 'tmux attach-session -t'
