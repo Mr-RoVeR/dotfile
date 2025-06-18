@@ -1,1 +1,0 @@
-paru -S eza hyprpaper hyprlock nwg-bar nwg-drawer powerpill starship wofi wofimoji waybar ripgrep neovim dunst gtk3 qt5ct qt6ct npm ntfs-3g qt5-graphicaleffects qt5-quickcontrols qt5-quickcontrols2 slurp grim pavucontrol pamixer floorp unzip nwg-look archlinux-xdg-menu kvantum-theme-catppuccin-git yazi fzf tree ugrep

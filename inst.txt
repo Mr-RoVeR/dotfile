@@ -1,0 +1,5 @@
+ttf-cascadia-code-nerd clang llvm neovim zen-browser-bin beautyline cmake npm python-pip yt-dlp aria2 unzip ripgrep ugrep heroic-games-launcher-bin ntfs-3g dosfstools 
+xclip wl-clipboard starship eza
+
+candy-icons-git noto-fonts-cjk
+rsync

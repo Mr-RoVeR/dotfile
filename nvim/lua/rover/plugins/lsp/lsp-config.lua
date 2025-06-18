@@ -45,12 +45,14 @@ return {
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 		end
 
-		mason_lspconfig.setup_handlers({
+		mason_lspconfig.setup({
 			function(server_name)
-				lspconfig[server_name].setup({ capabilities = capabilities })
+				lspconfig[server_name].setup({
+					capabilities = capabilities,
+				})
 			end,
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
