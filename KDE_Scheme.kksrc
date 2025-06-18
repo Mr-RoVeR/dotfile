@@ -1,6 +1,7 @@
 [ActivityManager][Global Shortcuts]
 switch-to-activity-6ea35b30-81c2-4094-b49a-3131b298a63b=
 switch-to-activity-6f692048-db11-4c55-8fde-9842fc545fe8=
+switch-to-activity-c1db87e6-e68b-4dc4-9f12-f82db83f0194=
 
 [KDE Keyboard Layout Switcher][Global Shortcuts]
 Switch keyboard layout to English (US)=Ctrl+Alt+Shift+E
@@ -12,7 +13,7 @@ Switch to Next Keyboard Layout=Meta+Alt+K
 AboutApp=
 AboutKDE=
 Activate Next Tab=Ctrl+PgDown; Ctrl+]
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
 Back=Back
@@ -23,7 +24,7 @@ Clear=
 Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+Ins; Ctrl+C
+Copy=Ctrl+C; Ctrl+Ins
 CreateFolder=F10
 Cut=Ctrl+X; Shift+Del
 DeleteFile=Shift+Del
@@ -57,7 +58,7 @@ New=Ctrl+N
 Next=PgDown
 NextCompletion=Ctrl+Down
 Open=Ctrl+O
-OpenContextMenu=Shift+F10; Menu
+OpenContextMenu=Menu; Shift+F10
 OpenMainMenu=F10
 OpenRecent=
 Paste=Ctrl+V; Shift+Ins
@@ -69,7 +70,7 @@ PrintPreview=
 Prior=PgUp
 Quit=Ctrl+Q
 Redo=Ctrl+Shift+Z
-Reload=Refresh; F5
+Reload=F5; Refresh
 RenameFile=F2
 Replace=Ctrl+R
 ReportBug=
@@ -95,7 +96,7 @@ ZoomIn=Ctrl++; Ctrl+=
 ZoomOut=Ctrl+-
 
 [kaccess][Global Shortcuts]
-Toggle Screen Reader On and Off=Meta+Alt+S
+Toggle Screen Reader On and Off=
 
 [kcm_touchpad][Global Shortcuts]
 Disable Touchpad=Touchpad Off
@@ -109,12 +110,12 @@ decrease_volume_small=Shift+Volume Down
 increase_microphone_volume=Microphone Volume Up
 increase_volume=Volume Up
 increase_volume_small=Shift+Volume Up
-mic_mute=Meta+Volume Mute; Microphone Mute
+mic_mute=Microphone Mute; Meta+Volume Mute
 mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Meta+L; Screensaver
+Lock Session=Screensaver; Meta+L
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 LogOut=
@@ -129,15 +130,15 @@ Cycle Overview Opposite=
 Decrease Opacity=
 Edit Tiles=Meta+T
 Expose=Ctrl+F9
-ExposeAll=Launch (C); Ctrl+F10
+ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
 ExposeClassCurrentDesktop=
 Grid View=Alt+0
 Increase Opacity=
 Kill Window=Meta+Ctrl+Esc
 Move Tablet to Next Output=
-MoveMouseToCenter=Meta+F6
-MoveMouseToFocus=Meta+F5
+MoveMouseToCenter=
+MoveMouseToFocus=
 MoveZoomDown=
 MoveZoomLeft=
 MoveZoomRight=
@@ -202,6 +203,10 @@ Walk Through Windows of Current Application Alternative (Reverse)=
 Window Above Other Windows=Ctrl+Alt+K
 Window Below Other Windows=
 Window Close=Ctrl+Alt+Q
+Window Custom Quick Tile Bottom=
+Window Custom Quick Tile Left=
+Window Custom Quick Tile Right=
+Window Custom Quick Tile Top=
 Window Fullscreen=
 Window Grow Horizontal=
 Window Grow Vertical=
@@ -223,10 +228,10 @@ Window One Screen Up=
 Window One Screen to the Left=
 Window One Screen to the Right=
 Window Operations Menu=Alt+F3
-Window Pack Down=Alt+H
-Window Pack Left=Alt+J
-Window Pack Right=Alt+K
-Window Pack Up=Alt+L
+Window Pack Down=Alt+J
+Window Pack Left=Alt+H
+Window Pack Right=Alt+L
+Window Pack Up=Alt+K
 Window Quick Tile Bottom=Meta+Down
 Window Quick Tile Bottom Left=
 Window Quick Tile Bottom Right=
@@ -272,8 +277,9 @@ Window to Screen 4=
 Window to Screen 5=
 Window to Screen 6=
 Window to Screen 7=
+disableInputCapture=Meta+Shift+Esc
 view_actual_size=Meta+0
-view_zoom_in=Meta+=; Meta++
+view_zoom_in=Meta++; Meta+=
 view_zoom_out=Meta+-
 
 [mediacontrol][Global Shortcuts]
@@ -290,7 +296,7 @@ stopmedia=Media Stop
 _launch=Meta+E
 
 [org.kde.kcalc.desktop][Global Shortcuts]
-_launch=Launch (1)
+_launch=
 
 [org.kde.konsole.desktop][Global Shortcuts]
 NewTab=
@@ -298,11 +304,11 @@ NewWindow=
 _launch=Alt+Return
 
 [org.kde.krunner.desktop][Global Shortcuts]
-RunClipboard=Alt+Shift+F2
-_launch=Alt+Space
+RunClipboard=
+_launch=Alt+Shift+Space
 
 [org.kde.kscreen.desktop][Global Shortcuts]
-ShowOSD=Meta+P; Display
+ShowOSD=
 
 [org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
 _launch=Meta+Esc
@@ -313,12 +319,12 @@ _launch=Meta+.; Meta+Ctrl+Alt+Shift+Space
 [org.kde.spectacle.desktop][Global Shortcuts]
 ActiveWindowScreenShot=Ctrl+Alt+Print
 CurrentMonitorScreenShot=
-FullScreenScreenShot=Print
+FullScreenScreenShot=Shift+Print
 OpenWithoutScreenshot=
 RecordRegion=
 RecordScreen=
 RecordWindow=
-RectangularRegionScreenShot=Shift+Print
+RectangularRegionScreenShot=Print
 WindowUnderCursorScreenShot=
 _launch=
 
@@ -335,7 +341,7 @@ PowerOff=Power Off
 Sleep=Sleep
 Toggle Keyboard Backlight=Keyboard Light On/Off
 Turn Off Screen=
-powerProfile=Meta+B; Battery
+powerProfile=Battery; Meta+B
 
 [plasmashell][Global Shortcuts]
 activate application launcher=Meta; Alt+F1
@@ -360,19 +366,29 @@ cyclePrevAction=
 manage activities=Meta+Q
 next activity=Meta+Tab
 previous activity=Meta+Shift+Tab
-repeat_action=Meta+Ctrl+R
+repeat_action=
 show dashboard=Ctrl+F12
 show-barcode=
 show-on-mouse-pos=Meta+V
-stop current activity=Meta+S
+stop current activity=
 switch to next activity=
 switch to previous activity=
 toggle do not disturb=
 
 [systemsettings.desktop][Global Shortcuts]
-_launch=Tools
+_launch=Meta+S
 kcm-kscreen=
 kcm-lookandfeel=
 kcm-powerdevilprofilesconfig=
 kcm-screenlocker=
 kcm-users=
+
+[wacomtablet][Global Shortcuts]
+Map to fullscreen=Meta+Ctrl+F
+Map to screen 1=Meta+Ctrl+1
+Map to screen 2=Meta+Ctrl+2
+Next Profile=Meta+Ctrl+N
+Previous Profile=Meta+Ctrl+P
+Toggle screen map selection=Meta+Ctrl+M
+Toggle stylus mode=Meta+Ctrl+S
+Toggle touch tool=Meta+Ctrl+T
