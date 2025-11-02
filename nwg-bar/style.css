@@ -1,0 +1,61 @@
+window {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#inner-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+}
+#bar {
+  margin: 0px;
+  font-size: 16px;
+  font-family: Product Sans;
+}
+
+button,
+image {
+  background: none;
+  opacity: 0.8;
+  border-style: none;
+  box-shadow: none;
+  color: #eceff4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+button {
+  padding-top: 10px;
+  margin: 5px;
+}
+
+button:hover {
+  background: linear-gradient(
+    165deg,
+    rgba(8, 24, 46, 0.85),
+    rgba(86, 168, 231, 0.85),
+    rgba(229, 63, 135, 0.85)
+  );
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(8, 24, 46, 0.85);
+  border-radius: 10px;
+}
+
+button:focus {
+  background: linear-gradient(
+    165deg,
+    rgba(8, 24, 46, 0.85),
+    rgba(86, 168, 231, 0.85),
+    rgba(229, 63, 135, 0.85)
+  );
+  border-color: rgba(8, 24, 46, 0.85);
+  border-radius: 10px;
+}
+
+grid {
+  border-radius: 5px;
+  padding: 15px;
+}
