@@ -56,11 +56,12 @@
         },
         "memory": {
             "interval": 5,
-            "format": "󰍛 {}%",
+            "format": "  {}%",
+            "on-click": "kitty --class kitty-btop -e btop",
             "max-length": 10
         },
         "tray": {
-            "spacing": 10
+            "spacing": 12
         },
         "clock": {
             "tooltip-format": "{calendar}",
