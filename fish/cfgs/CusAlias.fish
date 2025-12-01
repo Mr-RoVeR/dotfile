@@ -46,7 +46,7 @@ alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
-alias cdd 'cd /run/media/rover/'
+alias cdd 'cd /run/media/mr_user/'
 alias cdw 'cd ~/WorkSpace'
 alias cd. 'cd ~/.config'
 

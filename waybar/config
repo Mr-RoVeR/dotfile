@@ -14,7 +14,7 @@
         "memory",
         "network",
         "wireplumber",
-        "battery",
+        "bluetooth",
         "custom/power"
         ],
         "wlr/taskbar": {
@@ -71,7 +71,7 @@
         "network": {
             "format-wifi" : "{icon}",
             "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-            "format-ethernet": "󰀂",
+            "format-ethernet": "󰈀",
             "format-alt" : "󱛇",
             "format-disconnected" : "󰖪",
             "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
@@ -80,6 +80,18 @@
             "on-click-right": "exec nm-connection-editor",
             "interval": 5,
             "nospacing": 1,
+        },
+        "bluetooth": {
+            "format": "",
+            "format-off": "󰂲",
+            "format-on": "󰂯",
+            "format-connected": "󰂱 {device_alias}",
+            "format-connected-battery": "󰂱", 
+            "tooltip": true,
+            "tooltip-format": "Controller: {controller_alias}\nAddress: {controller_address}\nStatus: {status}",
+            "tooltip-format-connected": "Controller: {controller_alias}\nAddress: {controller_address}\nConnected: {device_alias} ({device_address})\nBattery: {device_battery_percentage}%",
+            "on-click": "blueman-manager",
+            "on-click-right": "$HOME/.config/hypr/scripts/toggle_bluetooth.sh",
         },
         "wireplumber": {
             "format": "{icon}",
