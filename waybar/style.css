@@ -84,6 +84,8 @@ window#waybar.hidden {
 #clock {
   font-family: JetBrainsMono Nerd Font;
   background-color: #cba6f7;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #custom-power {
