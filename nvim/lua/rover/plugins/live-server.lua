@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("live-server").setup({
 			port = 5500,
-			browser = "vivaldi-snapshot",
+			browser = "google-chrome-stable",
 		})
 	end,
 }
