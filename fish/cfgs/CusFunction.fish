@@ -1,11 +1,3 @@
-
-# Cleanup local orphaned packages
-function cleanup
-    while pacman -Qdtq
-        sudo pacman -R (pacman -Qdtq)
-    end
-end
-
 function livs
     if not type -q live-server
         set_color yellow

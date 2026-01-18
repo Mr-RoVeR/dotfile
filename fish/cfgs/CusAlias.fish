@@ -4,18 +4,13 @@ alias vv 'v .'
 alias ff 'fastfetch'
 alias fm 'yazi .'
 alias fzfp 'fzf --preview="bat --color=always {}"'
-alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
 alias grep 'ugrep --color=auto'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
+
 alias DIE 'loginctl poweroff'
 alias RBT 'loginctl reboot'
 
-#arch pacman alias
-alias pac 'sudo pacman'
-alias pacup 'sudo pacman -Syu'
-alias pacrm 'sudo pacman -Rns'
-alias pacin 'sudo pacman -S'
 #tmux alias
 alias tml 'tmux list-sessions'
 alias tma 'tmux attach-session -t'
@@ -33,11 +28,11 @@ alias Gic 'git commit -m'
 alias Gid 'git diff'
 
 #custom ls
-alias ls 'eza -al --color=always --group-directories-first --icons' 
-alias la 'eza -a --color=always --group-directories-first --icons'  
-alias ll 'eza -l --color=always --group-directories-first --icons'  
-alias lt 'eza -aT --color=always --group-directories-first --icons' 
-alias l. 'eza -ald --color=always --group-directories-first --icons .*' 
+alias ls 'eza -al --color=always --group-directories-first --icons'
+alias la 'eza -a --color=always --group-directories-first --icons'
+alias ll 'eza -l --color=always --group-directories-first --icons'
+alias lt 'eza -aT --color=always --group-directories-first --icons'
+alias l. 'eza -ald --color=always --group-directories-first --icons .*'
 
 
 # Navigation
