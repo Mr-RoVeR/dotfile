@@ -14,3 +14,4 @@ insensitive=true
 allow_images=true
 image_size=30
 gtk_dark=true
+terminal=kitty

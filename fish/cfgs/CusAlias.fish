@@ -8,8 +8,8 @@ alias fixpacman 'sudo rm /var/lib/pacman/db.lck'
 alias grep 'ugrep --color=auto'
 alias tarnow 'tar -acf '
 alias untar 'tar -zxvf '
-alias DIE 'systemctl poweroff'
-alias RBT 'systemctl reboot'
+alias DIE 'loginctl poweroff'
+alias RBT 'loginctl reboot'
 
 #arch pacman alias
 alias pac 'sudo pacman'
@@ -33,11 +33,11 @@ alias Gic 'git commit -m'
 alias Gid 'git diff'
 
 #custom ls
-alias ls 'eza -al --color=always --group-directories-first --icons' # preferred listing
-alias la 'eza -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll 'eza -l --color=always --group-directories-first --icons'  # long format
-alias lt 'eza -aT --color=always --group-directories-first --icons' # tree listing
-alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+alias ls 'eza -al --color=always --group-directories-first --icons' 
+alias la 'eza -a --color=always --group-directories-first --icons'  
+alias ll 'eza -l --color=always --group-directories-first --icons'  
+alias lt 'eza -aT --color=always --group-directories-first --icons' 
+alias l. 'eza -ald --color=always --group-directories-first --icons .*' 
 
 
 # Navigation
@@ -46,20 +46,6 @@ alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 alias ...... 'cd ../../../../..'
-alias cdd 'cd /run/media/mr_user/'
+alias cdd 'cd /mnt/rover/'
 alias cdw 'cd ~/WorkSpace'
 alias cd. 'cd ~/.config'
-
-# Get fastest mirrors
-alias mirror 'sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
-alias mirrora 'sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist'
-alias mirrord 'sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist'
-alias mirrors 'sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist'
-
-alias pacdiff 'sudo -H DIFFPROG=meld pacdiff'
-
-# Get the error messages from journalctl
-alias jctl 'journalctl -p 3 -xb'
-
-# Recent installed packages
-alias rip 'expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl'

@@ -4,13 +4,22 @@ local kmp = vim.keymap
 kmp.set("n", "<leader>q", ":q<CR>", { silent = true, desc = "Quit" })
 kmp.set("n", "<leader>`", ":w<CR>", { silent = true, desc = "Save file" })
 kmp.set("n", "<leader>_", ":wa<CR>", { silent = true, desc = "Save all opened file" })
-kmp.set("n", "<leader>ls", ":LiveServerStart<CR>", { silent = true, desc = "Start live server" })
+kmp.set("n", "<leader>Ls", function()
+	vim.cmd("12split")
+	vim.cmd("terminal livs")
+	vim.cmd("startinsert")
+end, { silent = true, desc = "Start live server (custom)" })
 kmp.set("n", "<leader>lS", ":LiveServerStop<CR>", { silent = true, desc = "Stop live server" })
 
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
 vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
 vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+
+vim.keymap.set("t", "<c-h>", [[<C-\><C-n><C-w>h]])
+vim.keymap.set("t", "<c-j>", [[<C-\><C-n><C-w>j]])
+vim.keymap.set("t", "<c-k>", [[<C-\><C-n><C-w>k]])
+vim.keymap.set("t", "<c-l>", [[<C-\><C-n><C-w>l]])
 
 kmp.set("v", "J", ":m '>+1<CR>gv=gv")
 kmp.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -28,7 +37,6 @@ kmp.set(
 	{ silent = true, desc = "Replace text" }
 )
 
--- window management
 kmp.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 kmp.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 kmp.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })

@@ -1,8 +1,8 @@
 {
     "logo": {
-        "source": "~/.config/fastfetch/Ranni_FF.png",
-        "type": "kitty",
-        "height": 20,
+        "source": "/home/rover/.config/fastfetch/Gentoo.png",
+        "type": "kitty-direct",
+        "height": 17,
         "width": 35,
         "padding": {
             "top": 5,
@@ -32,6 +32,7 @@
             "key": "│ ├󰏖 ",
             "keyColor": "red",
             "valueColor": "purple"
+
         },
         {
             "type": "shell",

@@ -1,9 +1,0 @@
-add>>
-GRUB_CMDLINE_LINUX="zswap.enabled=0 rootfstype=btrfs snd-intel-dspcfg.dsp_driver=1"
-to /etc/default/grub
-
-options snd-intel-dspcfg dsp_driver=1
-to /etc/modprobe.d/alsa.conf
-
-options snd-intel-dspcfg dsp_driver=1
-to /etc/modprobe.d/modprobe.conf
