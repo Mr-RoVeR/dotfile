@@ -1,0 +1,58 @@
+set selection-clipboard clipboard
+set adjust-open width
+set page-padding 6
+set scroll-step 80
+set smooth-scroll true
+set scroll-page-aware true
+set window-title-basename true
+
+set recolor true
+set recolor-lightcolor "#0f1115"
+set recolor-darkcolor  "#cdd6f4"
+
+set default-bg "#0f1115"
+set default-fg "#cdd6f4"
+
+set statusbar-bg "#0f1115"
+set statusbar-fg "#a6adc8"
+
+set inputbar-bg "#0f1115"
+set inputbar-fg "#cdd6f4"
+
+set notification-bg "#11131a"
+set notification-fg "#cdd6f4"
+set notification-error-bg "#1e1e2e"
+set notification-error-fg "#f38ba8"
+set notification-warning-bg "#1e1e2e"
+set notification-warning-fg "#fab387"
+
+set completion-bg "#11131a"
+set completion-fg "#cdd6f4"
+set completion-highlight-bg "#1e1e2e"
+set completion-highlight-fg "#89b4fa"
+set font "JetBrainsMono Nerd Font 11"
+
+map j scroll down
+map k scroll up
+map h scroll left
+map l scroll right
+
+map J navigate next
+map K navigate previous
+
+map gg navigate first
+map G  navigate last
+
+map + zoom in
+map - zoom out
+map = zoom original
+
+map r reload
+map f toggle_fullscreen
+map [ rotate ccw
+map ] rotate cw
+
+map y yank selection
+set show-hidden false
+set link-zoom true
+
