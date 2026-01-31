@@ -55,8 +55,8 @@ window#waybar.hidden {
 #clock,
 #tray {
   border-radius: 4px;
-  margin: 6px 3px;
-  padding: 6px 12px;
+  margin: 3px 3px;
+  padding: 3px 12px;
   background-color: #1e1e2e;
   color: #181825;
 }

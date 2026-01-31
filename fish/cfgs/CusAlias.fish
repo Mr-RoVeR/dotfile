@@ -44,3 +44,4 @@ alias ...... 'cd ../../../../..'
 alias cdd 'cd /mnt/rover/'
 alias cdw 'cd ~/WorkSpace'
 alias cd. 'cd ~/.config'
+

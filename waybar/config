@@ -61,6 +61,7 @@
             "max-length": 10
         },
         "tray": {
+            "icon-size":18,
             "spacing": 12
         },
         "clock": {
