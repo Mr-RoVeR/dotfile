@@ -1,0 +1,40 @@
+# Live Server function
+livs() {
+    if ! command -v live-server &> /dev/null; then
+        echo -e "\e[33mError: live-server not found. Install it via npm.\e[0m"
+        return 1
+    fi
+
+    read -p "Enter IPv4 address (Default: 127.0.0.1): " host
+    host=${host:-127.0.0.1}
+
+    echo "Starting Live Server on http://$host:5500..."
+    live-server --host="$host" --port=5500 --browser="google-chrome-stable"
+}
+
+# Snapper snapshot function
+snappit() {
+    local fs_type=$(findmnt -n -o FSTYPE -T /)
+
+    if [ "$fs_type" != "btrfs" ]; then
+        echo -e "\e[31mError: Root filesystem is $fs_type.\e[0m"
+        echo "Snapper snapshots require Btrfs. Terminating..."
+        return 1
+    fi
+
+    read -p "Enter snapshot description: " description
+    description=${description:-"Manual snapshot"}
+
+    sudo snapper -c root create -d "$description"
+}
+
+# Simple backup function
+backup() {
+    cp "$1" "$1.bak"
+}
+
+# History with timestamps
+history_time() {
+    builtin history | more # Bash handles time via HISTTIMEFORMAT
+}
+export HISTTIMEFORMAT='%F %T '

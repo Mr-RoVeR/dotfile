@@ -1,0 +1,9 @@
+# Environment Variables
+export VIRTUAL_ENV_DISABLE_PROMPT="1"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export SHELL=/bin/bash
+
+# Initialize Starship Prompt
+if [[ $(command -v starship) ]]; then
+    eval "$(starship init bash)"
+fi
