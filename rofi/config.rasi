@@ -1,0 +1,11 @@
+configuration {
+	modi:                       "drun,calc,run";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-calc:               "CALCULATE";
+    display-run:                "RUN";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
+}
+
+
