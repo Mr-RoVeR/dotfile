@@ -47,13 +47,18 @@ window#waybar.hidden {
   background-color: #f38ba8;
 }
 
+/* Base pill badge style */
 #memory,
 #custom-power,
 #bluetooth,
 #wireplumber,
 #network,
 #clock,
-#tray {
+#tray,
+#backlight,
+#battery,
+#power-profiles-daemon,
+#idle_inhibitor {
   border-radius: 4px;
   margin: 3px 3px;
   padding: 3px 12px;
@@ -63,6 +68,9 @@ window#waybar.hidden {
 
 #custom-power {
   margin-right: 6px;
+  background-color: #f2cdcd;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 #memory {
@@ -88,15 +96,60 @@ window#waybar.hidden {
   font-weight: bold;
 }
 
-#custom-power {
-  background-color: #f2cdcd;
-  font-weight: bold;
-  font-size: 16px;
-}
 #bluetooth {
   background-color: #cdd6f4;
   font-size: 16px;
 }
+
+/* --- Laptop Modules --- */
+
+#backlight {
+  background-color: #89b4fa;
+  font-size: 14px;
+}
+
+#battery {
+  background-color: #a6e3a1;
+  font-size: 14px;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: #89dceb;
+}
+
+#battery.warning:not(.charging) {
+  background-color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f38ba8;
+  color: #11111b;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: #181825;
+    color: #f38ba8;
+  }
+}
+
+#power-profiles-daemon {
+  background-color: #eba0ac;
+  font-size: 15px;
+}
+
+#idle_inhibitor {
+  background-color: #f5c2e7;
+  font-size: 16px;
+}
+
+/* Tooltips */
 tooltip {
   border-radius: 8px;
   padding: 15px;
