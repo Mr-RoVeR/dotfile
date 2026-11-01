@@ -6,7 +6,7 @@
   },
   {
     "label": "Logout",
-    "exec": "hyprctl dispatch exit",
+    "exec": "/home/rover/.config/hypr/scripts/logout.sh",
     "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
   },
   {

@@ -1,15 +1,33 @@
+@define-color base      #25253a;
+@define-color mantle    #1c1c2e;
+@define-color crust     #13131f;
+@define-color surface0  #36374f;
+@define-color surface1  #4d4e6b;
+@define-color overlay0  #7d80a3;
+@define-color text      #e2e8ff;
+@define-color subtext0  #b8bfe0;
+
+@define-color pink      #ff9ae0;
+@define-color mauve     #c89bff;
+@define-color red       #ff6e8a;
+@define-color yellow    #ffde67;
+@define-color green     #8cf0a0;
+@define-color sky       #6ee4f8;
+@define-color lavender  #a8b5ff;
+
 * {
   border: none;
   border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
   min-height: 0;
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  font-weight: 600;
 }
-
 window#waybar {
-  background-color: #181825;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  background: transparent;
+  color: @text;
 }
 
 window#waybar.hidden {
@@ -17,37 +35,60 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background-color: transparent;
+  margin: 5px 4px;
+  padding: 0 4px;
+  border-radius: 12px;
+  background-color: alpha(@base, 0.92);
+  border: 1px solid alpha(@surface1, 0.7);
 }
 
 #workspaces button {
-  all: initial;
-  min-width: 0;
-  box-shadow: inset 0 -3px transparent;
-  padding: 6px 18px;
-  margin: 6px 3px;
-  border-radius: 4px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+  margin: 3px 3px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background-color: transparent;
+  background-image: none;
+  color: @subtext0;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
+}
+#workspaces button:focus,
+#workspaces button:active,
+#workspaces button:checked {
+  outline: none;
+  box-shadow: none;
+  background-image: none;
 }
 
-#workspaces button.active {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+#workspaces button.empty {
+  color: @overlay0;
 }
 
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+#workspaces button:hover:not(.active) {
+  background-color: @surface0;
+  background-image: none;
+  color: @text;
 }
 
-#workspaces button.urgent {
-  background-color: #f38ba8;
+#workspaces button:active:not(.active) {
+  background-color: @surface1;
 }
 
-/* Base pill badge style */
+#workspaces button.active,
+#workspaces button.active:hover {
+  background-color: @mauve;
+  background-image: none;
+  color: @crust;
+}
+
+#workspaces button.urgent,
+#workspaces button.urgent:hover {
+  background-color: @red;
+  background-image: none;
+  color: @crust;
+}
+
 #memory,
 #custom-power,
 #bluetooth,
@@ -59,104 +100,176 @@ window#waybar.hidden {
 #battery,
 #power-profiles-daemon,
 #idle_inhibitor {
-  border-radius: 4px;
-  margin: 3px 3px;
-  padding: 3px 12px;
-  background-color: #1e1e2e;
-  color: #181825;
+  margin: 5px 4px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background-color: alpha(@base, 0.92);
+  border: 1px solid alpha(@surface1, 0.7);
+  color: @text;
+  transition:
+    background-color 150ms ease-out,
+    color 150ms ease-out;
 }
 
-#custom-power {
-  margin-right: 6px;
-  background-color: #f2cdcd;
-  font-weight: bold;
-  font-size: 16px;
+#wireplumber:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#battery:hover,
+#power-profiles-daemon:hover {
+  background-color: @surface0;
 }
 
-#memory {
-  background-color: #fab387;
-  font-size: 14px;
+#wireplumber:active,
+#network:active,
+#bluetooth:active,
+#backlight:active,
+#battery:active,
+#power-profiles-daemon:active {
+  background-color: @surface1;
 }
 
-#wireplumber {
-  background-color: #f9e2af;
+#clock {
+  color: @mauve;
+  font-weight: 700;
+}
+
+#wireplumber,
+#network,
+#bluetooth,
+#backlight {
+  color: @lavender;
   font-size: 16px;
 }
 
 #network {
-  background-color: #94e2d5;
-  padding-right: 17px;
+  padding-right: 16px;
+}
+
+#wireplumber.muted {
+  color: @overlay0;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+  color: @overlay0;
+}
+
+#memory,
+#power-profiles-daemon {
+  color: @subtext0;
+}
+
+#idle_inhibitor {
+  color: @subtext0;
   font-size: 16px;
 }
 
-#clock {
-  font-family: JetBrainsMono Nerd Font;
-  background-color: #cba6f7;
-  font-size: 14px;
-  font-weight: bold;
+#idle_inhibitor:hover {
+  background-color: @surface0;
 }
 
-#bluetooth {
-  background-color: #cdd6f4;
+#idle_inhibitor.activated,
+#idle_inhibitor.activated:hover {
+  background-color: @pink;
+  color: @crust;
+}
+
+#custom-power {
+  margin-right: 8px;
+  color: @red;
   font-size: 16px;
 }
 
-/* --- Laptop Modules --- */
-
-#backlight {
-  background-color: #89b4fa;
-  font-size: 14px;
+#custom-power:hover {
+  background-color: @red;
+  color: @crust;
 }
 
+#custom-power:active {
+  background-color: alpha(@red, 0.7);
+  color: @crust;
+}
 #battery {
-  background-color: #a6e3a1;
-  font-size: 14px;
+  color: @green;
 }
 
 #battery.charging,
 #battery.plugged {
-  background-color: #89dceb;
+  color: @sky;
 }
 
 #battery.warning:not(.charging) {
-  background-color: #f9e2af;
+  color: @yellow;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f38ba8;
-  color: #11111b;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
+  background-color: @red;
+  color: @crust;
+  animation-name: pulse;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
-@keyframes blink {
+@keyframes pulse {
   to {
-    background-color: #181825;
-    color: #f38ba8;
+    background-color: @base;
+    color: @red;
   }
 }
 
-#power-profiles-daemon {
-  background-color: #eba0ac;
-  font-size: 15px;
+#tray > .passive {
+  -gtk-icon-effect: dim;
 }
 
-#idle_inhibitor {
-  background-color: #f5c2e7;
-  font-size: 16px;
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
 }
 
-/* Tooltips */
+menu {
+  padding: 4px;
+  border-radius: 10px;
+  background-color: @base;
+  border: 1px solid @surface1;
+  color: @text;
+}
+
+menu menuitem {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: transparent;
+  color: @text;
+}
+
+menu menuitem:hover {
+  background-color: @surface0;
+}
+
+menu menuitem:disabled {
+  color: @overlay0;
+}
+
+.modules-left > widget:first-child > * {
+  margin-left: 10px;
+}
+
+.modules-right > widget:last-child > * {
+  margin-right: 10px;
+}
+
 tooltip {
-  border-radius: 8px;
-  padding: 15px;
-  background-color: #131822;
+  border-radius: 10px;
+  background-color: @base;
+  border: 1px solid @surface1;
 }
 
 tooltip label {
-  padding: 5px;
-  background-color: #131822;
+  padding: 4px 4px;
+  color: @text;
 }

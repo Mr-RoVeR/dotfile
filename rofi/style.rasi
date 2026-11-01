@@ -1,32 +1,40 @@
 * {
-    font:                        "JetBrains Mono Nerd Font 10";
-    background:                  #201A41;
-    background-alt:              #392684;
-    foreground:                  #FFFFFF;
-    selected:                    #F801E8;
-    active:                      #00CCF5;
-    urgent:                      #8D0083;
+    font:                        "JetBrainsMono Nerd Font 12";
+
+    base:                        #25253a;
+    mantle:                      #1c1c2e;
+    crust:                       #13131f;
+    surface0:                    #36374f;
+    surface1:                    #4d4e6b;
+    overlay0:                    #7d80a3;
+    text:                        #e2e8ff;
+    subtext0:                    #b8bfe0;
+
+    mauve:                       #c89bff;
+    pink:                        #ff9ae0;
+    red:                         #ff6e8a;
+    yellow:                      #ffde67;
+    green:                       #8cf0a0;
+    sky:                         #6ee4f8;
+    lavender:                    #a8b5ff;
 }
 
-/*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
-    transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       1000px;
+    width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
 
-    /* properties for all widgets */
     enabled:                     true;
-    border-radius:               15px;
+    border:                      2px;
+    border-radius:               20px;
+    border-color:                @mauve;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            #1c1c2ef2;
 }
 
-/*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
     spacing:                     0px;
@@ -36,11 +44,11 @@ mainbox {
 }
 
 imagebox {
-    padding:                     20px;
-    background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/a.png", height);
+    padding:                     25px;
+    background-color:            @base;
+    border-radius:               18px 0px 0px 18px;
     orientation:                 vertical;
-    children:                    [ "inputbar", "dummy", "mode-switcher" ];
+    children:                    [ "inputbar", "textbox-art", "mode-switcher" ];
 }
 
 listbox {
@@ -51,56 +59,66 @@ listbox {
     children:                    [ "message", "listview" ];
 }
 
-dummy {
+textbox-art {
+    expand:                      true;
+    padding:                     10px 0px;
     background-color:            transparent;
+    text-color:                  @subtext0;
+    font:                        "JetBrainsMono Nerd Font 11";
+    markup:                      true;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    str:                         "<span size='57344' foreground='#c89bff'></span>&#10;&#10;<span size='13312' foreground='#e2e8ff'><b>G E N T O O</b></span>&#10;<span size='10240' foreground='#7d80a3'>Hyprland · OpenRC</span>";
 }
 
-/*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
-    padding:                     15px;
-    border-radius:               10px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    spacing:                     12px;
+    padding:                     14px 16px;
+    border-radius:               14px;
+    background-color:            @surface0;
+    text-color:                  @text;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
+
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         "";
-    background-color:            inherit;
-    text-color:                  inherit;
+    background-color:            transparent;
+    text-color:                  @mauve;
 }
+
 entry {
     enabled:                     true;
-    background-color:            inherit;
-    text-color:                  inherit;
+    background-color:            transparent;
+    text-color:                  @text;
     cursor:                      text;
     placeholder:                 "Search";
-    placeholder-color:           inherit;
+    placeholder-color:           @overlay0;
 }
 
-/*****----- Mode Switcher -----*****/
-mode-switcher{
+mode-switcher {
     enabled:                     true;
-    spacing:                     20px;
+    spacing:                     12px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
 }
+
 button {
-    padding:                     15px;
-    border-radius:               10px;
-    background-color:            @background-alt;
-    text-color:                  inherit;
+    padding:                     12px;
+    border-radius:               14px;
+    background-color:            @surface0;
+    text-color:                  @subtext0;
+    horizontal-align:            0.5;
     cursor:                      pointer;
 }
-button selected {
-    background-color:            @selected;
-    text-color:                  @foreground;
+
+button selected.normal {
+    background-color:            @mauve;
+    text-color:                  @crust;
 }
 
-/*****----- Listview -----*****/
 listview {
     enabled:                     true;
     columns:                     1;
@@ -112,53 +130,60 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
-    spacing:                     10px;
+
+    spacing:                     8px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
     cursor:                      "default";
 }
 
-/*****----- Elements -----*****/
 element {
     enabled:                     true;
     spacing:                     15px;
-    padding:                     8px;
-    border-radius:               10px;
+    padding:                     10px 12px;
+    border-radius:               14px;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @text;
     cursor:                      pointer;
 }
+
 element normal.normal {
-    background-color:            inherit;
-    text-color:                  inherit;
+    background-color:            transparent;
+    text-color:                  @text;
 }
+
 element normal.urgent {
-    background-color:            @urgent;
-    text-color:                  @foreground;
+    background-color:            #ff6e8a40;
+    text-color:                  @red;
 }
+
 element normal.active {
-    background-color:            @active;
-    text-color:                  @foreground;
+    background-color:            #8cf0a033;
+    text-color:                  @green;
 }
+
 element selected.normal {
-    background-color:            @selected;
-    text-color:                  @foreground;
+    background-color:            @mauve;
+    text-color:                  @crust;
 }
+
 element selected.urgent {
-    background-color:            @urgent;
-    text-color:                  @foreground;
+    background-color:            @red;
+    text-color:                  @crust;
 }
+
 element selected.active {
-    background-color:            @urgent;
-    text-color:                  @foreground;
+    background-color:            @green;
+    text-color:                  @crust;
 }
+
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        36px;
     cursor:                      inherit;
 }
+
 element-text {
     background-color:            transparent;
     text-color:                  inherit;
@@ -167,22 +192,24 @@ element-text {
     horizontal-align:            0.0;
 }
 
-/*****----- Message -----*****/
 message {
     background-color:            transparent;
 }
+
 textbox {
-    padding:                     15px;
-    border-radius:               10px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    padding:                     14px;
+    border-radius:               14px;
+    background-color:            @surface0;
+    text-color:                  @text;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
-error-message {
-    padding:                     15px;
-    border-radius:               20px;
-    background-color:            @background;
-    text-color:                  @foreground;
-}
 
+error-message {
+    padding:                     14px;
+    border:                      2px;
+    border-radius:               16px;
+    border-color:                @red;
+    background-color:            @mantle;
+    text-color:                  @text;
+}

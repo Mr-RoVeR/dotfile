@@ -7,7 +7,9 @@ hl.config({
 		kb_rules = "",
 
 		touchpad = {
-			natural_scroll = false,
+			natural_scroll = true,
+			tap_to_click = true,
+			disable_while_typing = true,
 		},
 
 		accel_profile = "flat",
@@ -19,5 +21,7 @@ hl.config({
 
 	cursor = {
 		no_hardware_cursors = true,
+		no_warps = true,
+		hide_on_key_press = true,
 	},
 })

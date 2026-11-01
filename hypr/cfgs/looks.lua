@@ -21,7 +21,7 @@ hl.config({
 
 		-- Opacity
 		active_opacity = 1.0,
-		inactive_opacity = 0.85,
+		inactive_opacity = 0.95,
 
 		-- Shadow
 		shadow = {
@@ -44,7 +44,6 @@ hl.config({
 	},
 
 	dwindle = {
-		pseudotile = true,
 		preserve_split = true,
 	},
 

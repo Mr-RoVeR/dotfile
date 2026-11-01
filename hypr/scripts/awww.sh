@@ -1,10 +1,10 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 set WALLPAPER_DIR "$HOME/.config/hypr/walls/"
 
 if not pgrep -x "awww-daemon" > /dev/null
     awww-daemon &
-    sleep 0.5
+    sleep 1
 end
 
 for display in (hyprctl monitors -j | jq -r '.[].name')

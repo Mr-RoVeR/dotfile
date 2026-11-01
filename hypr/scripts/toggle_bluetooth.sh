@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 if bluetoothctl show | grep -q 'Powered: yes'; then
   bluetoothctl power off >/dev/null
