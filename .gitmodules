@@ -1,0 +1,6 @@
+[submodule "nixos"]
+	path = nixos
+	url = https://github.com/Mr-RoVeR/Nix-dots.git
+[submodule "Nix-dots"]
+	path = Nix-dots
+	url = https://github.com/Mr-RoVeR/Nix-dots.git
